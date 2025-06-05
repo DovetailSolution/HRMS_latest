@@ -231,6 +231,16 @@
  <!-- ---------------------------------------------------------------------------------------------------->
     	<a href="reminder.jsp">Set reminder</a>
  <!-- --------------------------------------------------------------------------------------------------- -->
+    	<form action="form16request" method="post">
+    		<input type="hidden" name="action" value="form16">
+    		<button type="submit">Request for form 16</button>
+    	</form>
+ <!-- ----------------------------------------------------------------------------------------------------->
+    	<form action="form16request" method="get">
+    		<input type="hidden" name="action" value="formstatus">
+    		<button type="submit">View form Status</button>
+    	</form>
+ <!-- ----------------------------------------------------------------------------------------------------->
     </div>
 </body>
 </html>

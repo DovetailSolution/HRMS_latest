@@ -16,14 +16,17 @@
             margin: 0;
             padding: 0;
         }
-        .container {
-            width: 100%;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
+		.container {
+			    width: 100%;
+			    max-width: 1200px;
+			    margin: 50px auto;
+			    padding: 30px;
+			    background-color: rgba(255, 255, 255, 0.95);
+			    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			    border-radius: 10px;
+			    overflow-x: auto; /* Enable horizontal scroll if needed */
+			}
+
         h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -40,6 +43,7 @@
             padding: 15px;
             border: 1px solid #ddd;
             text-align: center;
+            table-layout: auto; 
         }
         th {
             background-color: #007BFF;
@@ -320,7 +324,9 @@
 					    <% if (record.getAttachment() != null && !record.getAttachment().isEmpty()) { %>
 					        <a href="<%= record.getAttachment() %>" target="_blank">Open Attachment</a>
 
-					    <% } else { %>
+					    <% 
+					    } 
+					    else { %>
 					        No Attachment
 					    <% } %>
 					</td>
@@ -328,8 +334,8 @@
 					    <form action="hr" method="post" style="display:inline;">
 					        <input type="hidden" name="empId" value="<%= record.getEmpid() %>">
 					        <input type="hidden" name="expenseid" value="<%= record.getId() %>">
-					        <button type="submit" name="action" value="Approved_by_HR" class="button">Approve</button>
-					        <button type="submit" name="action" value="Rejected_by_HR" class="button button-secondary">Reject</button>
+					        <button type="submit" name="action" value="Approved_by_HR" class="button">Approve</button><br><br>
+					        <button type="submit" name="action" value="Rejected_by_HR" class="button button-secondary">Reject</button><br><br>
 					        <button type="submit" name="action" value="Send_To_Admin" class="button button-secondary">Send to Admin</button>
 					    </form>
 					</td>

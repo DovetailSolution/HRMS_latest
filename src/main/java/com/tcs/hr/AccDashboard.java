@@ -84,6 +84,10 @@ public class AccDashboard extends HttpServlet {
 		ps.executeUpdate();
 		
 		}
+		/*
+		 * else if("form16".equals(action)) { PreparedStatement
+		 * ps=con.prepareStatement("update "); }
+		 */
 		response.sendRedirect("AccountantDashboard.jsp");
 	} 
 	catch (Exception e) {

@@ -1,6 +1,7 @@
 package com.tcs.hr;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
@@ -19,8 +20,15 @@ import javax.servlet.http.Part;
 
 import org.json.JSONObject;
 
+
+@MultipartConfig(
+	    fileSizeThreshold = 1024 * 1024 * 2,  // 2MB before storing to disk
+	    maxFileSize = 1024 * 1024 * 20,       // 20MB max file size
+	    maxRequestSize = 1024 * 1024 * 25     // 25MB max request size
+	)
+
+
 @WebServlet(name = "expense", urlPatterns = { "/expense" })
-@MultipartConfig(maxFileSize = 16177215) // Set max file size to 16MB
 public class ExpensesServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -54,18 +62,35 @@ public class ExpensesServlet extends HttpServlet {
             String username = (String) session.getAttribute("user");
             String empId = (String) session.getAttribute("empid");
 
-            // Handle file upload
-            Part filePart = request.getPart("attachment");
-            String uploadPath = null;
-
-            if (filePart != null && filePart.getSize() > 0) {
-                String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-                uploadPath = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\AttendanceManagementSystem\\uploads\\" + fileName;
-
-                File file = new File(uploadPath);
-                file.getParentFile().mkdirs();
-                filePart.write(uploadPath);
+            Part filePart = request.getPart("attachment");        //get attachment from jsp
+            String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+            
+            // Save in WebApp Directory
+            String webAppUploadDir = getServletContext().getRealPath("/") + "uploads";
+            File webAppDir = new File(webAppUploadDir);
+            
+            if (!webAppDir.exists()) 
+            {
+                webAppDir.mkdirs();
             }
+            
+            String webAppUploadPath = webAppUploadDir + File.separator + fileName;
+            filePart.write(webAppUploadPath);
+
+            // Save in C:/uploads/
+            String externalUploadDir = "C:/uploads";
+            File externalDir = new File(externalUploadDir);
+            
+            if (!externalDir.exists())
+            {
+                externalDir.mkdirs();
+            }
+            
+            String externalUploadPath = externalUploadDir + File.separator + fileName;
+            filePart.write(externalUploadPath);
+
+            // Store only relative path for web access
+            String fileUrl = "uploads/" + fileName;
 
             // Database connection and insertion
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -88,7 +113,7 @@ public class ExpensesServlet extends HttpServlet {
                     ps.setString(11, mode);
                     ps.setString(12, ticketNo);
                     ps.setString(13, ticketDate);
-                    ps.setString(14, uploadPath);
+                    ps.setString(14, fileUrl);
 
                     int rowsInserted = ps.executeUpdate();
 

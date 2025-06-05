@@ -79,9 +79,23 @@ public class AttendanceRecord {
     private Timestamp actionedDate;
     private String remarks;
     private String slipMonth;
+    private String form16request;
+    private String formStatus;
     
     
     
+	public String getFormStatus() {
+		return formStatus;
+	}
+	public void setFormStatus(String formStatus) {
+		this.formStatus = formStatus;
+	}
+	public String getForm16request() {
+		return form16request;
+	}
+	public void setForm16request(String form16request) {
+		this.form16request = form16request;
+	}
 	public String getSlipMonth() {
 		return slipMonth;
 	}

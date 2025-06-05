@@ -11,12 +11,7 @@
   <packaging>war</packaging>
   
   <dependencies>
-    <!-- Dependency 1: JSON library -->
-    <dependency>
-      <groupId>org.json</groupId>
-      <artifactId>json</artifactId>
-      <version>20210307</version>
-    </dependency>
+    
     
     <!-- https://mvnrepository.com/artifact/org.json/json -->
 	<dependency>

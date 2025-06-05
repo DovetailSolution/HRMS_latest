@@ -43,14 +43,17 @@ public class ReportServlet extends HttpServlet {
 
             if ("download1".equals(action)) {
                 ReportGenerator.generateAttendanceReport(response, con);
-            } else if ("download2".equals(action)) {
+            } 
+            else if ("download2".equals(action)) {
                 ReportGenerator.generatePivotedReport(response, con);
-            } else if("download3".equals(action)) {
+            } 
+            else if("download3".equals(action)) {
                 ReportGenerator.generateSalaryReport(response, con);
             } 
-
             con.close();
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
             response.getWriter().println("Error generating report: " + e.getMessage());
         }
