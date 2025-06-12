@@ -241,6 +241,16 @@
     		<button type="submit">View form Status</button>
     	</form>
  <!-- ----------------------------------------------------------------------------------------------------->
+   		<!-- <form action="autoEmail" method="post">
+		    <label for="emailContext">Write what the email is about:</label><br>
+		    <textarea name="emailContext" id="emailContext" rows="5" cols="40" placeholder="e.g., inform about project delay due to server issues" required></textarea><br><br>
+		    <input type="submit" value="Generate Email & Download" />
+		</form> -->
+
+ 
+ <!-- ------------------------------------------------------------------------------------------------- -->  		
+ 
+   
     </div>
 </body>
 </html>

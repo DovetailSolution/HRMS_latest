@@ -16,6 +16,7 @@ C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\TaskServlet.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\Reminder.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\DownloadServlet.java
+C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\AutoEmail.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\LoginServlet.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\SalesManager.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\SalesTaskEdit.java
@@ -31,6 +32,7 @@ C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\SalarySlipRequestServlet.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\Admin.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\TokenClaims.java
+C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\OpenAIUtil.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\RegisterServlet.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\AccDashboard.java
 C:\Users\lenovo\git\created_27-01-2025\AttendanceManagementSystem\src\main\java\com\tcs\hr\RelievingLetter.java

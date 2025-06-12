@@ -42,7 +42,7 @@ private static Key generateKey() {
 }
 
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String registeredEmpid = request.getParameter("username");
+    String registeredEmpid = request.getParameter("empid");
     //String empId= request.getParameter("empid");
     String password = request.getParameter("password");
     String latitude = request.getParameter("latitude");

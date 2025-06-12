@@ -12,8 +12,10 @@ com\tcs\hr\SalesDashboard.class
 com\tcs\hr\ExpenseStatus.class
 com\tcs\hr\SalarySlip.class
 com\tcs\hr\salarymodule.class
+com\tcs\hr\AutoEmail.class
 com\tcs\hr\Form16Request.class
 com\tcs\hr\ReportServlet.class
+com\tcs\hr\OpenAIUtil.class
 com\tcs\hr\TaskServlet.class
 com\tcs\hr\Family.class
 com\tcs\hr\updateTaskStatus.class

@@ -82,7 +82,7 @@
             %>
         </div>
         <form id="loginForm" action="login" method="post">
-            <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="empid" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="hidden" name="latitude" id="latitude">
             <input type="hidden" name="longitude" id="longitude">
