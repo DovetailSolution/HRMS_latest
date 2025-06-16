@@ -42,7 +42,7 @@ private static Key generateKey() {
 }
 
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String registeredEmpid = request.getParameter("empid");
+    String registeredEmpId = request.getParameter("empid");
     //String empId= request.getParameter("empid");
     String password = request.getParameter("password");
     String latitude = request.getParameter("latitude");
@@ -51,6 +51,9 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     
     System.out.println(latitude);
     System.out.println(longitude);
+    
+    System.out.println("sign in empid:"+registeredEmpId);
+    System.out.println("sign in password:"+password);
     
     boolean isApiRequest = "XMLHttpRequest".equals(request.getHeader("login"));
 
@@ -77,7 +80,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance_db", "root", "manager");
         
         PreparedStatement ps = con.prepareStatement("SELECT id, empId, username, role FROM users WHERE empId=? AND password=?");
-        ps.setString(1, registeredEmpid);
+        ps.setString(1, registeredEmpId);
         ps.setString(2, password);
         ResultSet rs = ps.executeQuery();
 
